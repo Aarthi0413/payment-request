@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/app.css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  </head>
+  <body>
+    <header id="header">Payment Request</header>
+    <hr class="hr-line"/>
+    <div class="app-container">
+      <h1 class="contact-heading">Contact Details</h1>
+      <p class="send-text">Send Payment Request to</p>
+
+      <div class="drop-down" id="dropDown" style="height: 200%;">
+        <select name="name" class="user-list" id="person-select">
+          <option>Select Username</option>
+        </select>
+      </div>
+
+      <div class="name-email-container">
+        <div class="name-section">
+          <label for="name" class="name">Name</label>
+          <input type="text" placeholder="Enater you name" class="name-input" id="name" />
+        </div>
+        <div class="email-section">
+          <label for="email" class="name">Email</label>
+          <input type="text" placeholder="example@gmail.com" class="email-input" id="email"/>
+        </div>
+      </div>
+      <h1 class="request-heading">Request Details</h1>
+      <div class="amount-date-container">
+        <div class="amount-section">
+          <!--<input type="number" placeholder="00.0" class="amount-input"  id="amount"/> -->
+          <label for="amount" class="amount">Amount</label>
+            <div class="currency-input">
+              <select class="currency-select" id="currency">
+                  <option value="₹">₹</option>
+                  <option value="$">$</option>
+              </select>
+              <input type="number" id="amount" placeholder="Enter amount" class="amount-input">
+          </div>
+          
+        </div>
+        <div class="date-section" >
+          <label for="date" class="date">Due Date</label>
+          <input type="date" placeholder="Sep 20, 2023" class="date-input" id="date" min=""/>
+          <p class="date-text" id="difference-result"></p></p>
+        </div>
+      </div>
+
+      <h1 class="company-heading">Company name to show on request</h1>
+      <div>
+        <select id="company" class="company-list">
+          <option value="">Select Company</option>
+          <option value="GWC DATA.AI">GWC DATA.AI</option>
+          <option value="DOMO">DOMO</option>
+        </select>
+      </div>
+
+      <h1 class="des-heading">Destination Account</h1>
+      <div>
+        <select id="destination" class="destination">
+          <option value="">Select Destination Account Number</option>
+          <option>0000975311</option>
+          <option>0000975312</option>
+        </select>
+        <p class="des-text">Incoming payments are placed in a secure receiving account to keep  <br>destinationaccount details anonymous</p>
+      </div>
+
+      <div class="button-container">
+        <button type="button" class="request-button" id="paymentReq">Request Payment</button>
+      </div>
+    </div>
+
+    <main id="app"></main>
+    <script src="js/helpers.js"></script>
+    <script src="components/router.js"></script>
+    <script src="components/autocomplete.js"></script>
+    <script src="components/modal.js"></script>
+    <script src="components/table.js"></script>
+    <script src="components/floatingactionbutton.js"></script>
+    <script src="https://unpkg.com/ryuu.js"></script>
+    <script src="https://unpkg.com/@domoinc/domo-phoenix/build/global/domoPhoenixWithMaps.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
